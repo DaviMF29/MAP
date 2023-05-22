@@ -19,6 +19,7 @@ public class Medico extends Pessoa {
 
 	Scanner input = new Scanner(System.in);
 	ArrayList<Paciente> agenda = new ArrayList<Paciente>();
+        
 	
 	public Medico(String nome, String CPF, String email, String telefone) {
 		super(nome, CPF, email, telefone);
@@ -73,12 +74,12 @@ public class Medico extends Pessoa {
 			System.out.println("\n(1: Sim | 2: Não)\nHá necessidade de preescrever medicamentos?: ");
 			text = input.nextLine();
 			if(text.equalsIgnoreCase("1")){
-                            System.out.println("Digite os exames solicitados: ");
+                            System.out.println("Digite os medicamentos preescritos: ");
                             text = input.nextLine();
                             return text;
                         }
                         else if(text.equalsIgnoreCase("2")){
-                            return "Sem Medicamentos preescritos.";
+                            return "Sem medicamentos preescritos.";
                         }
 		}
 	}
