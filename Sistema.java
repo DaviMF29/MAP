@@ -14,10 +14,6 @@ import java.util.Scanner;
 public class Sistema {
 
     
-	
-    
-    
-    
 	public void marcarConsulta(Medico medico, Paciente paciente) {
 		if (medico.getAgenda().size() >= 5) {
 			System.out.println("\nA agenda do médico " 
@@ -39,12 +35,15 @@ public class Sistema {
 				System.out.println(i+1 + " - " + medico.getAgenda().get(i));
 			}
 			while (true) {
-				System.out.println("\nDigite a posição do paciente que terá a consulta cancelada");
+				System.out.println("\nDigite a posição do paciente para cancelar a consulta");
 				posicaoPaciente = input.nextInt();
 				if (posicaoPaciente > 0 && posicaoPaciente <= medico.getAgenda().size()) {
 					System.out.println("\nConsulta cancelada");
 					break;
 				}
+                                else{
+                                    System.out.println("Posição inválida. Os valores vão de 1 à "+ medico.getAgenda().size());
+                                }
 			}
 			medico.getAgenda().remove(posicaoPaciente-1);
 		}

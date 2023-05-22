@@ -34,12 +34,13 @@ public class Medico extends Pessoa {
 	public void realizarConsulta() {
 		if (agenda.size() > 0) {
 			System.out.println("\nPaciente atendido: " + agenda.get(0).getNome()
-                                + "\nExames solicitados: " + solicitarRealizacaoExames() 
                                 + "\nMedicamentos Preescrevidos: " + preescreverMedicamentos()
+                                + "\nExames solicitados: " + solicitarRealizacaoExames() 
                                 + "\nMotivo da ida: " + agenda.get(0).getMotivo());
                         
-			System.out.println("Paciente Liberado!");
+                        
 			agenda.remove(0);
+			System.out.println("Paciente Atendido!");
 		}
                
       
@@ -54,35 +55,31 @@ public class Medico extends Pessoa {
 		String text = "0";
 		while (true) {
 			System.out.println("(1: Sim | 2: Não)\nHá necessidade de solicitar exames?: ");
-			text = input.next();
-			switch (text) {
-				case "1": {
-					System.out.println("Digite os exames solicitados: ");
-					text = input.next();
-					return text;
-				}
-				case "2": {
-					return "não";
-				}
-			}
-		}
+			text = input.nextLine();
+			if(text.equalsIgnoreCase("1")){
+                            System.out.println("Digite os exames solicitados: ");
+                            text = input.nextLine();
+                            return text;
+                        }
+                        else if(text.equalsIgnoreCase("2")){
+                            return "Sem exames socilitados.";
+                        }
+                        
 	}
-	
+    }
 	private String preescreverMedicamentos() {
 		String text = "0";
 		while (true) {
 			System.out.println("\n(1: Sim | 2: Não)\nHá necessidade de preescrever medicamentos?: ");
-			text = input.next();
-			switch (text) {
-				case "1": {
-					System.out.println("Digite os medicamentos: ");
-					text = input.next();
-					return text;
-				}
-				case "2": {
-					return "não";
-				}
-			}
+			text = input.nextLine();
+			if(text.equalsIgnoreCase("1")){
+                            System.out.println("Digite os exames solicitados: ");
+                            text = input.nextLine();
+                            return text;
+                        }
+                        else if(text.equalsIgnoreCase("2")){
+                            return "Sem Medicamentos preescritos.";
+                        }
 		}
 	}
         

@@ -18,11 +18,10 @@ public class Main {
 		Sistema sistema = new Sistema();
 		Medico medico1 = new Medico("Dr. Pep", "111-111-111-11", "04/02/1987", "(88)8 8888-8888");
 		
-		sistema.consultarAgenda(medico1);
+		
                 sistema.marcarConsulta(medico1, new Paciente("Luan", "444-444-444-44", "02/02/2002", "4002-8922", "Andou demais"));
 		sistema.marcarConsulta(medico1, new Paciente("Real madrid", "444.444.444.44", "06/03/1902", "4444-0000","Tomou sacode do ciy"));
-                
-		
+               
                 
 		sistema.consultarAgenda(medico1);
 		sistema.cancelarConsulta(medico1);
