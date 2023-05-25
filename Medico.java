@@ -20,6 +20,7 @@ public class Medico extends Pessoa {
 	Scanner input = new Scanner(System.in);
 	ArrayList<Paciente> agenda = new ArrayList<Paciente>();
         
+        
 	
 	public Medico(String nome, String CPF, String email, String telefone) {
 		super(nome, CPF, email, telefone);
@@ -32,6 +33,9 @@ public class Medico extends Pessoa {
 		this.agenda = agenda;
 	}
 
+        
+        
+        
 	public void realizarConsulta() {
 		if (agenda.size() > 0) {
 			System.out.println("\nPaciente atendido: " + agenda.get(0).getNome()
@@ -53,36 +57,43 @@ public class Medico extends Pessoa {
 	}
 	
 	private String solicitarRealizacaoExames() {
-		String text = "0";
-		while (true) {
-			System.out.println("(1: Sim | 2: Não)\nHá necessidade de solicitar exames?: ");
-			text = input.nextLine();
-			if(text.equalsIgnoreCase("1")){
-                            System.out.println("Digite os exames solicitados: ");
-                            text = input.nextLine();
-                            return text;
-                        }
-                        else if(text.equalsIgnoreCase("2")){
+		int valor = 0;
+                String exames;
+                System.out.println("(1: Sim | 2: Não)\nHá necessidade de solicitar exames?: ");
+		valor = input.nextInt();
+                while(valor >=3 || valor <=0){
+                    System.out.println("Valor inválido! Apenas 1 ou 2.");
+                }
+		if(valor == 1){
+                    System.out.println("Digite os exames solicitados: ");
+                    exames = input.next();
+                        return exames;
+                }else {
                             return "Sem exames socilitados.";
                         }
                         
-	}
-    }
+                }
+                        
+                            
+	
+    
 	private String preescreverMedicamentos() {
-		String text = "0";
-		while (true) {
-			System.out.println("\n(1: Sim | 2: Não)\nHá necessidade de preescrever medicamentos?: ");
-			text = input.nextLine();
-			if(text.equalsIgnoreCase("1")){
+		int valor = 0; 
+                String exames = "";
+                System.out.println("(1: Sim | 2: Não)\nHá necessidade de preescrever medicamento?: ");
+		valor = input.nextInt();
+                while(valor >=3 || valor <=0){
+                    System.out.println("Valor inválido! Apenas 1 ou 2.");
+                }
+			if(valor == 1){
                             System.out.println("Digite os medicamentos preescritos: ");
-                            text = input.nextLine();
-                            return text;
+                            exames = input.next();
+                            return exames;
                         }
-                        else if(text.equalsIgnoreCase("2")){
+                        else {
                             return "Sem medicamentos preescritos.";
                         }
-		}
-	}
+                }
         
         
 }

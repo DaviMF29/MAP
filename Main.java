@@ -22,9 +22,10 @@ public class Main {
                 sistema.marcarConsulta(medico1, new Paciente("Luan", "444-444-444-44", "02/02/2002", "4002-8922", "Andou demais"));
 		sistema.marcarConsulta(medico1, new Paciente("Real madrid", "444.444.444.44", "06/03/1902", "4444-0000","Tomou sacode do ciy"));
                
-                
+                sistema.cancelarConsulta(medico1);
 		sistema.consultarAgenda(medico1);
-		sistema.cancelarConsulta(medico1);
+                
+		
 		medico1.realizarConsulta();
 		sistema.consultarAgenda(medico1);
 		medico1.realizarConsulta();
